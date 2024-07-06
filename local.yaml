@@ -4,5 +4,8 @@
   - name: Update cache
     apt:
      update_cache: true
+  vars:
+    source_key: "./.ans-crypt/joost"
+    dest_key: "{{ lookup('env', 'HOME') }}/.ssh/joost"
   tasks:
   - include_tasks: tasks/zsh.yaml
